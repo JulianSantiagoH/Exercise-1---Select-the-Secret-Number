@@ -1,20 +1,14 @@
 let finishGame = false;
 
 let players = [
-
     {name:'Hacking', WinCasual:10, WinHard:13, WinHardcore:3}
 ];
-
-let playerExist = false;
 
 let playerName = prompt('enter your name');
 
 for (let i=0; i < players.length; i++) {
-    if (players[i].name === playerName) {
-        playerExist = true
-    } else {
+    if (players[i].name !== playerName) {
         players.push({ name: playerName, WinCasual: 0, WinHard: 0, WinHardcore: 0 })
-        playerExist = true;
         break
     }
 };
@@ -23,16 +17,17 @@ for (let i=0; i < players.length; i++) {
 while (finishGame == false) {
     let winningGame = false;
 
+    alert("hola " + playerName) // concatenación
+    alert(`Hola ${playerName}`) // interpolación
 
-
-    const menu = prompt(
-        "=== GAME MENU ===\n" +
-        "1. Start Game\n" +
-        "2. Instructions\n" +
-        "3. Credits\n" +
-        "4. Ranking\n" +
-        "5. Exit\n\n" +
-        "Please enter the number of your choice:");
+    const menu = prompt(`
+    === GAME MENU ===
+      1. Start Game
+      2. Instructions
+      3. Credits
+      4. Ranking
+      5. Exit
+    Please enter the number of your choice:`)
 
     if (menu == '1') {
 
@@ -207,29 +202,3 @@ while (finishGame == false) {
 
 
 };
-
-
-
-// let jugadores = [
-// ];
-
-
-// const jugador = prompt('Ingresa tu nombre');
-// const puntos = prompt('ingrese puntos ganadores');
-
-// const puntosNumero = parseInt(puntos);
-
-// for (let i=0; i < jugadores.length; i++){
-//     if (jugadores[i].name === jugador){
-//         jugadores[i].Points += puntosNumero
-//     } else{
-//         jugadores.push({name:jugador, Points: 0});
-//     }
-// }
-
-
-// //Visualizar ranking
-
-// for (let i=0; i < jugadores.length; i++){
-//     alert(`Name ${jugadores[i].name}  ${jugadores[i].Points}`);
-// };
