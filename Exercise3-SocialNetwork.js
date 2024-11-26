@@ -7,7 +7,6 @@ Requerimientos del reto:
 4. Si el usuario y contraseña son incorrectos, el sistema debe mostrar un mensaje de error y no mostrar ningún timeline.
 */
 
-
 const userDatabase = [
     {
         username: "Andres",
@@ -57,13 +56,14 @@ const nameModifier = (name) => {
 
 
 
-let userFound = false;
-let passwordFound = false;
+
 let loginOn = false;
 let logout = false;
 
 
 while (!logout) {
+    let userFound = false;
+    let passwordFound = false;
     const menu = prompt(`
     =========Welcome to Nosebook=========
 
@@ -103,12 +103,12 @@ while (!logout) {
 
             let userAccount = `
 
-                                        Welcome ${usernameJoin}
+                                        Welcome ${usernameModified}
             
                 New Post
                 `;
 
-            for(let i in usersTimeline){
+            for (let i in usersTimeline) {
                 userAccount += `
                 ${usersTimeline[i].username}
                 
@@ -122,9 +122,32 @@ while (!logout) {
             alert('Error, Username or Password is incorrect, please try again or register.')
         }
 
-    } else if (menu == '3'){
+    } else if (menu == '2') {
+
+        const newUser = prompt('Insert your username');
+        const newUsername = nameModifier(newUser);
+        const newPassword = prompt('Insert your password');
+
+        if (newUser && newPassword) {
+            userDatabase.push({
+                username: newUsername,
+                password: newPassword
+            });
+
+            alert('Account Created Successfully');
+
+        } else {
+            alert('Insert valid values')
+        };
+
+
+
+
+
+
+    } else if (menu == '3') {
         alert('Thanks for select us')
-        logout= true;
+        logout = true;
     }
 
 
