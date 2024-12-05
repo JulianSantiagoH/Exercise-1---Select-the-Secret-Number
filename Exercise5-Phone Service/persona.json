@@ -1,0 +1,13 @@
+{
+    "nombre":"Pepe",
+    "edad": 34,
+    "estudiante":false,
+    "direccion": {
+        "calle":"Ave.Primera no.555",
+        "ciudad":"Santo Domingo"
+    },
+    "telefonos":[
+        "123-456-789",
+        "987-654-321"
+    ]
+}
